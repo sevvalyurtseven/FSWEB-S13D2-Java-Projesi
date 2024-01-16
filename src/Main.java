@@ -12,6 +12,13 @@ public class Main {
         System.out.println("Palindrom Sayıyı Bulma:" + isPalindrome3(707));
         System.out.println("Palindrom Sayıyı Bulma:" + isPalindrome3(11212));
 
+        System.out.println("Mükemmel Sayıyı Bulma:" + isPerfectNumber(6));
+        System.out.println("Mükemmel Sayıyı Bulma:" + isPerfectNumber(28));
+        System.out.println("Mükemmel Sayıyı Bulma:" + isPerfectNumber(5));
+        System.out.println("Mükemmel Sayıyı Bulma:" + isPerfectNumber(-1));
+
+
+
     }
 
     //NOT: toCharArray() -> karakterleri bir array olarak aliyor.
@@ -63,4 +70,21 @@ public class Main {
         }
         return true;
     }
+
+    //number = 6 diyelim:
+
+    public static boolean isPerfectNumber(int number){
+        if(number <= 0){
+            return false;
+        }
+        int total = 0; //total = 0
+        for(int i = 1; i <= number / 2; i++){ // i = 1 i<=3,   i=2 i<=3,  i=3 i<=3
+            if (number % i == 0) total += i;  //total = 1; total = 2+1; total = 3+3;
+        }
+        return number == total;
+    }
+
+
+
+
 }
