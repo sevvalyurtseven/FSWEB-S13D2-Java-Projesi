@@ -21,6 +21,8 @@ public class Main {
         System.out.println("Sayıları Kelimelere Dök:" + numberToWords(1010));
         System.out.println("Sayıları Kelimelere Dök:" + numberToWords(-12));
 
+        System.out.println("ALISTIRMA:" + getFirstAndLastDigitSum(222));
+
 
 
     }
@@ -130,6 +132,13 @@ public class Main {
             }
         }
         return numberToText.trim(); //trim bosluklari siler!
+    }
+
+    //ALISTIRMA: 222 = 4, 121 = 2, 123458 = 9 İLK VE SON DEĞERLERİ TOPLAYAN BİR METHOD YAZINIZ.
+
+    public static int getFirstAndLastDigitSum(int number){
+        char[] digits = String.valueOf(number).toCharArray();
+        return Integer.parseInt(String.valueOf(digits[0])) + Integer.parseInt(String.valueOf(digits[digits.length-1]));
     }
 
 
