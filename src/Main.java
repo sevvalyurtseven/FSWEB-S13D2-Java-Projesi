@@ -8,6 +8,10 @@ public class Main {
         System.out.println("Palindrom Sayıyı Bulma:" + isPalindrome2(707));
         System.out.println("Palindrom Sayıyı Bulma:" + isPalindrome2(11212));
 
+        System.out.println("Palindrom Sayıyı Bulma:" + isPalindrome3(-1221));
+        System.out.println("Palindrom Sayıyı Bulma:" + isPalindrome3(707));
+        System.out.println("Palindrom Sayıyı Bulma:" + isPalindrome3(11212));
+
     }
 
     //NOT: toCharArray() -> karakterleri bir array olarak aliyor.
@@ -39,5 +43,24 @@ public class Main {
             number = number/10; //number = 12  number = 1 number = 0
         }
         return originalNum == reverseNumber; // originalNum = 121 reverseNumber = 121
+    }
+
+    //FARKLI BIR COZUM:
+
+    public static boolean isPalindrome3(int number){
+        number = Math.abs(number);
+        String numberString = Integer.toString(number);
+        char[] charNumber = numberString.toCharArray();
+
+        int firstIndex = 0;
+        int lastIndex = charNumber.length-1;
+
+        while(firstIndex < lastIndex){
+            if(charNumber[firstIndex] != charNumber[lastIndex]) return false;
+
+            firstIndex++;
+            lastIndex--;
+        }
+        return true;
     }
 }
