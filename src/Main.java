@@ -17,6 +17,10 @@ public class Main {
         System.out.println("Mükemmel Sayıyı Bulma:" + isPerfectNumber(5));
         System.out.println("Mükemmel Sayıyı Bulma:" + isPerfectNumber(-1));
 
+        System.out.println("Sayıları Kelimelere Dök:" + numberToWords(123));
+        System.out.println("Sayıları Kelimelere Dök:" + numberToWords(1010));
+        System.out.println("Sayıları Kelimelere Dök:" + numberToWords(-12));
+
 
 
     }
@@ -84,7 +88,49 @@ public class Main {
         return number == total;
     }
 
+    public static String numberToWords(int number){
+        if(number<0){
+            return "Invalid Value";
+        }
+        char[] digits = String.valueOf(number).toCharArray();
+        String numberToText = "";
+        for(char digit: digits){
+            switch (digit){
+                case '0':
+                    numberToText += "Zero ";
+                    break;
+                case '1':
+                    numberToText += "One ";
+                    break;
+                case '2':
+                    numberToText += "Two ";
+                    break;
+                case '3':
+                    numberToText += "Three ";
+                    break;
+                case '4':
+                    numberToText += "Four ";
+                    break;
+                case '5':
+                    numberToText += "Five ";
+                    break;
+                case '6':
+                    numberToText += "Six ";
+                    break;
+                case '7':
+                    numberToText += "Seven ";
+                    break;
+                case '8':
+                    numberToText += "Eight ";
+                    break;
+                case '9':
+                    numberToText += "Nine ";
+                    break;
 
+            }
+        }
+        return numberToText.trim(); //trim bosluklari siler!
+    }
 
 
 }
